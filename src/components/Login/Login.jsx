@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
-    const {userLoginWithPassword} = useContext(AuthContext);
+    const {userLoginWithPassword, googleLogin} = useContext(AuthContext);
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
@@ -26,6 +26,15 @@ const Login = () => {
             console.log(error)
         })
     }
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    } 
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col ">
@@ -47,6 +56,7 @@ const Login = () => {
                     </div>
                     </form>
                     <p>New Here? Please <Link className="text-primary text-bold text-xl " to='/register'>Register</Link></p>
+                    <button onClick={handleGoogleLogin} className="btn btn-primary mt-4">Sign In With Google</button>
                 </div>
             </div>
         </div>
