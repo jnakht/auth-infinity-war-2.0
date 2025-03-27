@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
     const {userLoginWithPassword} = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
+        
         const userEmail = e.target.email.value;
         const userPassword = e.target.password.value;
         console.log(userEmail, userPassword);
@@ -15,6 +17,10 @@ const Login = () => {
         userLoginWithPassword(userEmail, userPassword)
         .then(result => {
             console.log(result.user);
+            // reset the form
+            e.target.reset();
+            // navigate to home page
+            navigate('/');
         })
         .catch(error => {
             console.log(error)
