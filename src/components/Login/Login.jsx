@@ -1,6 +1,12 @@
 
 
 const Login = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const userEmail = e.target.email.value;
+        const userPassword = e.target.password.value;
+        console.log(userEmail, userPassword);
+    }
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col ">
@@ -9,7 +15,7 @@ const Login = () => {
                     
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <form >
+                    <form onSubmit={handleLogin}>
                     <div className="card-body">
                         <fieldset className="fieldset">
                             <label className="fieldset-label">Email</label>
@@ -17,7 +23,7 @@ const Login = () => {
                             <label className="fieldset-label">Password</label>
                             <input type="password" name="password" className="input" placeholder="Password" />
                             <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4">Login</button>
+                            <button className="btn btn-primary mt-4">Login</button>
                         </fieldset>
                     </div>
                     </form>
