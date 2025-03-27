@@ -11,7 +11,7 @@ const Register = () => {
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col ">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl font-bold">Register now!</h1>
                     
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -25,7 +25,7 @@ const Register = () => {
                             <label className="fieldset-label">Password</label>
                             <input type="password" name="password" className="input" placeholder="Password" />
                             <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-primary mt-4">Login</button>
+                            <button className="btn btn-primary mt-4">Register</button>
                         </fieldset>
                     </div>
                     </form>
