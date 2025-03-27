@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -39,6 +40,7 @@ const Login = () => {
                         </fieldset>
                     </div>
                     </form>
+                    <p>New Here? Please <Link className="text-primary text-bold text-xl " to='/register'>Register</Link></p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
@@ -40,6 +41,7 @@ const Register = () => {
                         </fieldset>
                     </div>
                     </form>
+                    <p>Already have an account? Please <Link className="text-primary text-bold text-xl " to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
